@@ -11,4 +11,4 @@ substitution: substitution.c cs50.c
 		gcc $^ -o $@
 
 wordle: wordle.c cs50.c
-		gcc $^ -o $@ -lcurl
+		gcc $^ -o $@
