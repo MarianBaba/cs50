@@ -14,6 +14,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
+    // test
     int key = atoi(argv[1]) % 26;
     string plaintext = get_string("Plaintext:  "); 
     // lowercase ascii values: from 97 ('a') to 122 ('z')
