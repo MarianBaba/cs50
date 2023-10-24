@@ -36,7 +36,7 @@ int main(int argc, string argv[])
     
     // choose the word
     string correct_word = get_word(filename);
-    printf("Randomly selected word: %s\n", correct_word);
+    //printf("Randomly selected word: %s\n", correct_word);
     
     // for each try available, let the user guess
     int i;
