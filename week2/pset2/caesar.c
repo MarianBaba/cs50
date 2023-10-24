@@ -14,7 +14,6 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // test
     int key = atoi(argv[1]) % 26;
     string plaintext = get_string("Plaintext:  "); 
     // lowercase ascii values: from 97 ('a') to 122 ('z')
@@ -22,7 +21,8 @@ int main(int argc, string argv[])
     printf("Ciphertext: ");
     for (int i = 0, n = strlen(plaintext); i < n; i++)
     {
-        if ((plaintext[i] >= 65 && plaintext[i] <= 90) || (plaintext[i] >= 97 && plaintext[i] <= 122)) {
+        if ((plaintext[i] >= 65 && plaintext[i] <= 90) || (plaintext[i] >= 97 && plaintext[i] <= 122))
+        {
             int base = islower(plaintext[i]) ? 97 : 65;
             int shift = (((plaintext[i] % base) + key) % 26);
             plaintext[i] = base + shift;

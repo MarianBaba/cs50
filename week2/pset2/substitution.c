@@ -22,7 +22,8 @@ int main(int argc, string argv[])
     printf("Ciphertext: ");
     for (int i = 0, n = strlen(plaintext); i < n; i++)
     {
-        if ((plaintext[i] >= 65 && plaintext[i] <= 90) || (plaintext[i] >= 97 && plaintext[i] <= 122)) {
+        if ((plaintext[i] >= 65 && plaintext[i] <= 90) || (plaintext[i] >= 97 && plaintext[i] <= 122)) 
+        {
             int base = islower(plaintext[i]) ? 97 : 65;
             if (base == 97)
             {
