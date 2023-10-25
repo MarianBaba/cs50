@@ -56,7 +56,7 @@ int main(int argc, string argv[])
     }
     if (i == tries)
     {
-        printf("\n\n"RED_BACKGROUND"Sorry! You run out of tries!"RESET_BACKGROUND"\n");
+        printf("\n\n"RED_BACKGROUND"Sorry! You run out of tries! The word was %s"RESET_BACKGROUND"\n", correct_word);
     }
     return 0;
 }
