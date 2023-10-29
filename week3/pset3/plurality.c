@@ -8,7 +8,8 @@ typedef struct
 {
     string name;
     int votes;
-} candidate;
+} 
+candidate;
 
 int main(int argc, string argv[])
 {
