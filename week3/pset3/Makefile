@@ -6,3 +6,6 @@ phonebook: phonebook.c cs50.c
 
 plurality: plurality.c cs50.c
 		gcc $^ -o $@
+
+runoff: runoff.c cs50.c
+		gcc $^ -o $@

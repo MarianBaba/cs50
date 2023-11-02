@@ -9,7 +9,9 @@ typedef struct
     string name;
     int votes;
 } 
-candidate;
+Candidate;
+
+bool is_valid(int len, string candidate, Candidate candidates[]);
 
 int main(int argc, string argv[])
 {
@@ -19,7 +21,7 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    candidate candidates[argc - 1];
+    Candidate candidates[argc - 1];
 
     for (int i = 1; i < argc; i++)
     {
@@ -27,11 +29,16 @@ int main(int argc, string argv[])
         candidates[i - 1].votes = 0;
     }
 
-    int voters = get_int("Nummber of voters: ");
+    int voters = get_int("Number of voters: ");
 
     for (int i = 0; i < voters; i++)
     {
-        string candidate = get_string("Vote: ");
+        string candidate;
+        do
+        {
+            candidate = get_string("Vote: ");    
+        } while (!is_valid(argc - 1, candidate, candidates));
+        
         for (int i = 0; i < argc - 1; i++)
         {
             if (strcmp(candidate, candidates[i].name) == 0)
@@ -41,15 +48,39 @@ int main(int argc, string argv[])
         }
     }
 
-    int index_winner = 0;
-    for (int i = 1; i < argc - 1; i++)
+    int max_votes = 0;
+    for (int i = 0; i < argc - 1; i++)
     {
-        if (candidates[i].votes > candidates[index_winner].votes)
+        if (candidates[i].votes > max_votes)
         {
-            index_winner = i;
+            max_votes = candidates[i].votes;
         }
     }
 
-    printf("%s\n", candidates[index_winner].name);
-    
+    for (int i = 0; i < argc - 1; i++)
+    {
+        if (candidates[i].votes == max_votes)
+        {
+            printf("%s ", candidates[i].name);
+        }
+    }
+
+    printf("\n");
+}
+
+bool is_valid(int len, string candidate, Candidate candidates[])
+{
+    bool found = false;
+    for (int i = 0; i < len; i++)
+    {
+        if (strcmp(candidate, candidates[i].name) == 0)
+        {
+            found = true;
+        }
+    }
+    if (!found)
+    {
+        printf("Invalid vote.\n");
+    }
+    return found;   
 }

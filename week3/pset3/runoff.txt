@@ -1,0 +1,10 @@
+STRUTTURE DATI:
+- preferences[numero di votanti][numero di candidati]
+- candidates[numero di candidati]
+
+
+INPUT: una serie di nomi, i candidati
+
+- chiedi il numero di votanti
+- per ciascun votante, chiedi un ranking da 1 a $NUM_CANDIDATI
+- aggiorna l'array preferences[i][j] = $INDEX_CANDIDATO
