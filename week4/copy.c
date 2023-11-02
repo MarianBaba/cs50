@@ -14,4 +14,6 @@ int main(void)
         t[i] = s[i];
     }
 
+    free(t);
+    return 0;
 }
