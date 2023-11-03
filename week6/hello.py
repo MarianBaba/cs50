@@ -1,8 +1,8 @@
-def main():
-    meow(3)
+import pyttsx3
 
-def meow(n):
-    for i in range(n):
-        print("meow")
-        
-main()
+engine = pyttsx3.init()
+
+name = input("Name: ")
+
+engine.say(f"ciao {name}")
+engine.runAndWait()
