@@ -1,14 +1,9 @@
-import csv
+from cs50 import SQL
 
-with open("favorites.csv", "r") as file:
-    reader = csv.DictReader(file)
-    counts = {}
-    for row in reader:
-        fav = row["language"]
-        if fav in counts:
-            counts[fav] += 1  
-        else:
-            counts[fav] = 1
+db = SQL("sqlite:///favorites.db")
 
-for key in sorted(counts, key=lambda language: counts[language], reverse=True):
-    print(f"{key}: {counts[key]}")
+favorite = input("Favorite: ")
+
+rows = db.execute("SELECT * FROM favorites")
+for row in rows:
+    print(row["name"])
